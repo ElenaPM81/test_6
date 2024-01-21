@@ -1,0 +1,17 @@
+CREATE PROCEDURE even_nums()
+BEGIN
+    DECLARE a INT default 0;
+    DROP TABLE IF EXISTS nums;
+    CREATE TABLE nums (a INT);
+
+	WHILE a <= 8 DO
+	SET a = a + 2;
+    INSERT INTO nums VALUES(a);
+    END WHILE;
+  
+    
+SELECT * FROM nums;
+END
+
+
+CALL even_nums();
